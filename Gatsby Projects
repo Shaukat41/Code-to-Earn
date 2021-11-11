@@ -1,0 +1,93 @@
+Hop-Skip-Jump: Set Up Development Environment
+https://youtu.be/MjUvj_H1Mxw
+Learning Gatsby is exciting! The only hurdle to start learning is to familiarize yourself with some core web technologies and make sure that you have installed all required software tools. These hurdles are of two types;
+Technology and tools
+Basic Technology; HTML, CSS, JavaScript, The Command Line (Linux, Windows, Mac), React, and GaphQL.
+Tools; 
+Install the following tools:
+
+Node.js (v14.15 or newer)
+Git
+Gatsby command line interface (CLI) (v3 or newer)
+Visual Studio Code
+
+Account Creation
+
+For you to deploy your site online, you will need this final step; to create accounts for the online platforms so people can see your website. These accounts are free.
+GitHub account
+Gatsby Cloud Account
+
+
+
+
+Gatsby uses React components to build out basic page structure of a website. You can create React components by writing React elements with JSX. JSX is a JavaScript syntax extension that describes the DOM structure of your component. It looks a bit like having HTML in your JavaScript files:
+
+const hello = <h1>Hello world!</h1>
+So a simple React component might look something like this:
+
+const Greeting = () => {
+  return (
+    <h1>Hello world!</h1>
+  )
+}
+
+Writing a React component
+There are three main steps to writing a React component:
+
+1- Import React from the 'react' package, so that you can use JSX inside your .js file.
+2- Define your component. It should be a function that returns a JSX element.
+3- Export your component, so that it can be used by other parts of your site.
+
+Here’s an example of what that basic structure looks like in code:
+
+my-component.js
+ 
+// Step 1: Import React.
+
+import * as React from 'react'
+
+/* Step 2: Define your component. Note that your
+component name should start with a capital letter. */
+
+const MyComponent = () => {
+  return (
+    <h1>Hi, welcome to my site!</h1>
+  )
+}
+
+/* Step 3: Export your component so it
+can be used by other parts of your app. */
+
+export default MyComponent
+
+Your component must return a single React element, but you can put as many elements inside that top-level element as you want. The code snippet below shows an example of a valid component and an invalid component:
+
+import * as React from 'react'
+const ValidComponent = () => {
+  return (
+    <div>
+      <h1>A valid component!</h1>
+      <p>This will work fine.</p>
+      <p>
+        Since there is only one top-level element: the div.
+      </p>
+    </div>
+  )
+}
+const InvalidComponent = () => {
+  return (
+    <h1>This won't work.</h1>
+    <p>Because there are two elements at the top level.</p>
+  )
+}
+If you try to build your site with the code above, you’ll get an error for <InvalidComponent> like this:
+
+Parsing error: Adjacent JSX elements must be
+wrapped in an enclosing tag. Did you want a JSX fragment
+<>...</>?
+
+There are two main types of components in a Gatsby site. They are;
+1- Page components. A page component contains all the UI elements for a specific page of your site.
+2- "Brick” components. (Note: The term brick component isn’t an official technical term. It’s just the best name I could come up with to describe this kind of component.) Brick components are smaller components that represent just a part of a page’s user interface (instead of an entire page). Just as a lot of bricks are used to make a building, many small brick react components are used to build a larger page component. The same brick component can be used in many places across your website.
+
+
